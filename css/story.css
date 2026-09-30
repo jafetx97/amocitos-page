@@ -1,0 +1,185 @@
+/* ============================================================
+   Página de historia individual
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-text: #fdfbfa;
+  --color-accent: #f5c6d0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: linear-gradient(180deg, #1a1116 0%, #2a1a22 100%);
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+/* Cabecera con foto de fondo (placeholder de color) */
+.story-hero {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem 1.5rem;
+  overflow: hidden;
+}
+
+.story-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.story-hero[data-bg="4"]::before { background: linear-gradient(135deg, #7b5b2d 0%, #c5a06b 100%); }
+.story-hero[data-bg="5"]::before { background: linear-gradient(135deg, #2d7b5b 0%, #6bc5a0 100%); }
+.story-hero[data-bg="6"]::before { background: linear-gradient(135deg, #7b2d6b 0%, #c56bb0 100%); }
+
+.story-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.story-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.story-hero__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.story-hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+/* Cuerpo del texto */
+.story-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem 3rem;
+}
+
+.story-body p {
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: rgba(253, 251, 250, 0.88);
+  margin-bottom: 1.5rem;
+}
+
+.story-body p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 600;
+  float: left;
+  line-height: 0.8;
+  margin: 0.1em 0.1em 0 0;
+  color: var(--color-accent);
+}
+
+/* Galería de fotos placeholder */
+.story-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+.story-gallery__item {
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4a3540 0%, #6b4a5a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(253, 251, 250, 0.4);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+/* Botón volver */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover {
+  transform: translateX(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.001ms !important; }
+}
+
+/* ---------- Listado de placas ---------- */
+.plates-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+.plates-list__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.25rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.plates-list__plate {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 1.25rem;
+  padding: 0.4rem 0.8rem;
+  background: #fbf3d9;
+  color: #2a2018;
+  border: 2px solid #2a2018;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.plates-list__meta {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(253, 251, 250, 0.7);
+}

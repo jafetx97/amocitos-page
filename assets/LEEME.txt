@@ -1,0 +1,24 @@
+Guarda aquí tus imágenes de fondo.
+
+Sugerencia de nombres (puedes usar los que quieras, solo recuerda actualizar
+las rutas en el CSS):
+
+  PANTALLA PRINCIPAL (index.html) -> se editan en css/styles.css
+    data-bg="1"  Novios          ->  novios.jpg
+    data-bg="2"  Nos conocimos   ->  conocimos.jpg
+    data-bg="3"  Primer beso     ->  beso.jpg
+
+  TARJETAS DE HISTORIAS (index.html, sección historias) -> css/styles.css
+    data-bg="4"  Cómo nos conocimos  ->  historia-1.jpg
+    data-bg="5"  Primera cita        ->  historia-2.jpg
+    data-bg="6"  Nuestros viajes     ->  historia-3.jpg
+
+  CABECERAS DE CADA HISTORIA (stories/*.html) -> css/story.css
+    usan los mismos data-bg 4, 5 y 6
+
+Recomendaciones:
+  - Formato: .jpg o .webp para fotos (más ligeras). .png si necesitas transparencia.
+  - Tamaño: 1600-2000 px de ancho es suficiente para pantalla completa.
+  - Comprime las imágenes para que la página cargue rápido (p. ej. squoosh.app).
+
+Puedes borrar este archivo cuando ya no lo necesites.
